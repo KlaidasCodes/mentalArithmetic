@@ -5,6 +5,6 @@ Will track scores in a local json and illustrate them with a graph to track the 
 
 
 
-+, -, x, /  (alone of any combination of those)
++, -, x, /  (alone or any combination of those)
 
 60, 120, 180s modes
