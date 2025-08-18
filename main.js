@@ -11,8 +11,6 @@ const arrOfSigns = ["addition", "subtraction"];
 
 
 
-
-
 const difficultyToLength = {
     "vEasy": 10,
     "Easy": 100,
@@ -22,21 +20,22 @@ const difficultyToLength = {
 
 
 
-
-
-function adding(num1, num2) {
+function adding(num1, num2, difficultyLevel) {
     return num1 + num2
 }
 
-function subtracting(num1, num2) {
+function subtracting(num1, num2, difficultyLevel) {
     return num1 - num2
 }
 
-function multiplying(num1, num2) {
+function multiplying(num1, num2, difficultyLevel) {
     return num1 * num2
 }
 
-function division(num1, num2) {
+function division(num1, num2, difficultyLevel) {
+    while (num2 == 0) {
+        num2 = pickRandomNumber(difficultyLevel);
+    }
     return num1 / num2
 }
 
@@ -56,6 +55,7 @@ function pickRandomNumber(difficultyLevel) {
 }
 
 function pickRandomSign(signArray) {
+    // picks a random arithmetic sign from a given array
     var randomIndex = Math.floor(Math.random() * signArray.length);
     return signArray[randomIndex]
 }
@@ -64,10 +64,11 @@ function pickRandomSign(signArray) {
 function creatingCalculation(difficultyLevel) {
     var number1 = pickRandomNumber(difficultyLevel);
     var number2 = pickRandomNumber(difficultyLevel);
-    var result = wordToSign["addition"](number1, number2);
+    var arithSign = pickRandomSign(arrOfSigns);
+    var result = wordToSign[arithSign](number1, number2);
     console.log(result);
 
 }
 
 
-creatingCalculation("Easy")
+creatingCalculation(difficultyNow)
