@@ -20,7 +20,12 @@ const difficultyToLength = {
     "Hard": 10000,
 }
 
-
+const wordToSign = {
+    "addition": "+",
+    "subtraction": "-",
+    "multiplication": "x",
+    "division": "/",
+}
 
 
 
@@ -44,7 +49,7 @@ function division(num1, num2, difficultyLevel) {
 }
 
 
-const wordToSign = {
+const wordToSignFunc = {
     "addition": adding,
     "subtraction": subtracting,
     "multilpication": multiplying,
@@ -69,11 +74,12 @@ function creatingCalculation(difficultyLevel) {
     var number1 = pickRandomNumber(difficultyLevel);
     var number2 = pickRandomNumber(difficultyLevel);
     var arithSign = pickRandomSign(arrOfSigns);
-    var result = wordToSign[arithSign](number1, number2);
+    var result = wordToSignFunc[arithSign](number1, number2);
+    var arithSignCurrent = wordToSign[arithSign];
     console.log(result);
     document.getElementById("num1").innerText = number1;
     document.getElementById("num2").innerText = number2;
-    
+    document.getElementById("arith_sign").innerText = arithSignCurrent;
 
 }
 
