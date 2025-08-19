@@ -1,3 +1,5 @@
+console.log("connected")
+
 // user presses a button to pick a timer
 timeAmount = 60;
 
@@ -17,6 +19,8 @@ const difficultyToLength = {
     "Medium": 1000,
     "Hard": 10000,
 }
+
+
 
 
 
@@ -67,8 +71,14 @@ function creatingCalculation(difficultyLevel) {
     var arithSign = pickRandomSign(arrOfSigns);
     var result = wordToSign[arithSign](number1, number2);
     console.log(result);
+    document.getElementById("num1").innerText = number1;
+    document.getElementById("num2").innerText = number2;
+    
 
 }
 
 
 creatingCalculation(difficultyNow)
+
+
+
