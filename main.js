@@ -80,8 +80,24 @@ function creatingCalculation(difficultyLevel) {
     document.getElementById("num1").innerText = number1;
     document.getElementById("num2").innerText = number2;
     document.getElementById("arith_sign").innerText = arithSignCurrent;
-
+    checkIfCorrectAns(13)
 }
+
+
+function checkIfCorrectAns(correctAns) {
+    var givenAnswer = document.getElementById("answer").value
+    if (givenAnswer == correctAns) {
+        console.log("Good job, the answer is correct!");
+    } else {
+        console.log("No quant future for you");
+    }
+}
+
+
+// document.addEventListener("return", () => {
+//     // something
+// })
+
 
 
 creatingCalculation(difficultyNow)
