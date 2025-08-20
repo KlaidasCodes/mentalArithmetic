@@ -70,16 +70,21 @@ function pickRandomSign(signArray) {
 }
 
 
+function updateValues(num1, num2, sign) {
+    document.getElementById("num1").innerText = number1;
+    document.getElementById("num2").innerText = number2;
+    document.getElementById("arith_sign").innerText = arithSignCurrent;
+}
+
+
 function creatingCalculation(difficultyLevel) {
     var number1 = pickRandomNumber(difficultyLevel);
     var number2 = pickRandomNumber(difficultyLevel);
     var arithSign = pickRandomSign(arrOfSigns);
     var result = wordToSignFunc[arithSign](number1, number2);
     var arithSignCurrent = wordToSign[arithSign];
-    console.log(result);
-    document.getElementById("num1").innerText = number1;
-    document.getElementById("num2").innerText = number2;
-    document.getElementById("arith_sign").innerText = arithSignCurrent;
+    console.log("result: ", result);
+    updateValues(number1, number2, arithSignCurrent);
     return result
 }
 
@@ -96,35 +101,15 @@ function checkIfCorrectAns(correctAns) {
 
 
 
-function testingThing(event) {
-    var currentAnswer = creatingCalculation(difficultyNow);
-    if (event.key === "Enter") {
-        console.log("Time to check the answer!");
-        checkIfCorrectAns(currentAnswer);
-        document.removeEventListener("keydown", testingThing);
-        deployExerciseAndCheckAns(difficultyNow);
-    }
-}
-
-
-
-function deployExerciseAndCheckAns(difficultyNow) {
-    // step 1: create the exercise:
-
-    //  step 2: wait for the user to submit an answer
-    document.addEventListener("keydown", testingThing);
-
-}
-
-
-deployExerciseAndCheckAns(difficultyNow);
-
 
 
 
 //  how about we instead deploy the listening to Enter and only then add the function???
 //  I think the problem is that we're stacking too many listeners and they all then individually
 //  execute the functions, that's why they're stacking!
+
+
+
 
 
 
