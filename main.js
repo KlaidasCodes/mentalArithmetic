@@ -95,31 +95,47 @@ function checkIfCorrectAns(correctAns) {
 }
 
 
-document.addEventListener("keydown", (event) => {
+
+function testingThing(event) {
+    var currentAnswer = creatingCalculation(difficultyNow);
     if (event.key === "Enter") {
-        console.log("Enter has been clicked!")
+        console.log("Time to check the answer!");
+        checkIfCorrectAns(currentAnswer);
+        document.removeEventListener("keydown", testingThing);
+        deployExerciseAndCheckAns(difficultyNow);
     }
-})
-
-
-
-
+}
 
 
 
 function deployExerciseAndCheckAns(difficultyNow) {
     // step 1: create the exercise:
-    var currentAnswer = creatingCalculation(difficultyNow);
 
     //  step 2: wait for the user to submit an answer
-    document.addEventListener("keydown", (event) => {
-        if (event.key === "Enter") {
-            console.log("Time to check the answer!");
-            checkIfCorrectAns(currentAnswer);
-            deployExerciseAndCheckAns(difficultyNow);
-        }
-    })
+    document.addEventListener("keydown", testingThing);
+
 }
 
 
 deployExerciseAndCheckAns(difficultyNow);
+
+
+
+
+//  how about we instead deploy the listening to Enter and only then add the function???
+//  I think the problem is that we're stacking too many listeners and they all then individually
+//  execute the functions, that's why they're stacking!
+
+
+
+
+// document.addEventListener("keydown", (event) => {
+//     if (event.key === "Enter") {
+//         console.log("Enter has been pressed");
+//         var currentAnswer = creatingCalculation(difficultyNow);
+//         checkIfCorrectAns(currentAnswer);
+//         document.removeEventListener();
+
+
+//     }
+// })
