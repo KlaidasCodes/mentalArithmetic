@@ -91,6 +91,7 @@ function checkIfCorrectAns(correctAns) {
     } else {
         console.log("No quant future for you");
     }
+    document.getElementById("answer").value = ""
 }
 
 
@@ -104,24 +105,21 @@ document.addEventListener("keydown", (event) => {
 
 
 
-// creatingCalculation(difficultyNow)
 
 
-// function oneFullRound(difficultyNow) {
-//     var moveNext = false
-//     correctAnswer = creatingCalculation(difficultyNow)
-//     document.addEventListener("keydown", (event) => {
-//     if (event.key === "Enter") {
-//         console.log("Enter has been clicked!");
-//         checkIfCorrectAns(correctAnswer);
-//         document.getElementById("answer").value = "";
-//         oneFullRound(difficultyNow)
-//     }
-// })
-// }
+function deployExerciseAndCheckAns(difficultyNow) {
+    // step 1: create the exercise:
+    var currentAnswer = creatingCalculation(difficultyNow);
 
-// oneFullRound(difficultyNow)
-
+    //  step 2: wait for the user to submit an answer
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            console.log("Time to check the answer!");
+            checkIfCorrectAns(currentAnswer);
+            deployExerciseAndCheckAns(difficultyNow);
+        }
+    })
+}
 
 
-
+deployExerciseAndCheckAns(difficultyNow);
