@@ -80,7 +80,7 @@ function creatingCalculation(difficultyLevel) {
     document.getElementById("num1").innerText = number1;
     document.getElementById("num2").innerText = number2;
     document.getElementById("arith_sign").innerText = arithSignCurrent;
-    checkIfCorrectAns(13)
+    return result
 }
 
 
@@ -94,13 +94,34 @@ function checkIfCorrectAns(correctAns) {
 }
 
 
-// document.addEventListener("return", () => {
-//     // something
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        console.log("Enter has been clicked!")
+    }
+})
+
+
+
+
+
+// creatingCalculation(difficultyNow)
+
+
+// function oneFullRound(difficultyNow) {
+//     var moveNext = false
+//     correctAnswer = creatingCalculation(difficultyNow)
+//     document.addEventListener("keydown", (event) => {
+//     if (event.key === "Enter") {
+//         console.log("Enter has been clicked!");
+//         checkIfCorrectAns(correctAnswer);
+//         document.getElementById("answer").value = "";
+//         oneFullRound(difficultyNow)
+//     }
 // })
+// }
 
+// oneFullRound(difficultyNow)
 
-
-creatingCalculation(difficultyNow)
 
 
 
