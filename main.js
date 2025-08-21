@@ -6,7 +6,7 @@ timeAmount = 60;
 // user presses a button to pick a difficulty
 var difficultyNow = "Easy";
 
-
+var userPoints = 0;
 // user selects all the arithmetic signs they want used in the test
 const arrOfSigns = ["addition", "subtraction"];
 // arrOfSigns = ["addition", "subtraction", "multiplication", "division"];
@@ -93,6 +93,8 @@ function checkIfCorrectAns(correctAns) {
     var givenAnswer = document.getElementById("answer").value
     if (givenAnswer == correctAns) {
         console.log("Good job, the answer is correct!");
+        userPoints += 1;
+        document.getElementById("user_points").innerText = "Current points: " + userPoints;
     } else {
         console.log("No quant future for you");
     }
