@@ -130,3 +130,22 @@ document.addEventListener("keydown", (event) => {
 
 
 
+// Logic for the timer:
+
+// we need a function that is async to not hold up other processes
+// find the equivalent of time.wait() to update the timer on screen each second
+// 
+
+
+// function printRandomStuff() {
+//     console.log("This is working so far...");
+// }
+var counter = 0;
+setInterval(() => {
+
+    console.log("is this working: " + counter);
+    counter += 1;
+}, 1000)
+
+
+
