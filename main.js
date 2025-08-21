@@ -140,11 +140,16 @@ document.addEventListener("keydown", (event) => {
 // function printRandomStuff() {
 //     console.log("This is working so far...");
 // }
-var counter = 60;
-setInterval(() => {
-    console.log("is this working: " + counter);
-    counter -= 1;
-    document.getElementById("timer").innerText = "Time left: " + counter + " seconds";
+var counter = 10;
+var theTimer = setInterval(() => {
+    if (counter == 0) {
+        clearInterval(theTimer);
+    } else{
+        console.log("is this working: " + counter);
+        counter -= 1;
+        document.getElementById("timer").innerText = "Time left: " + counter + " seconds";
+    }
+
 }, 1000)
 
 
