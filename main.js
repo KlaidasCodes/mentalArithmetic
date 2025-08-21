@@ -71,9 +71,9 @@ function pickRandomSign(signArray) {
 
 
 function updateValues(num1, num2, sign) {
-    document.getElementById("num1").innerText = number1;
-    document.getElementById("num2").innerText = number2;
-    document.getElementById("arith_sign").innerText = arithSignCurrent;
+    document.getElementById("num1").innerText = num1;
+    document.getElementById("num2").innerText = num2;
+    document.getElementById("arith_sign").innerText = sign;
 }
 
 
@@ -101,26 +101,30 @@ function checkIfCorrectAns(correctAns) {
 
 
 
+// so we just need to add an event listener.
+// when enter is pressed, this listener will:
+// 1) Check the current value inputted against the correct answer and register a point
+// 2) Change the numbers on the screen
+
+// NO NEED FOR MORE EVEN LISTENERS, THAT'S IT!
 
 
 
-//  how about we instead deploy the listening to Enter and only then add the function???
-//  I think the problem is that we're stacking too many listeners and they all then individually
-//  execute the functions, that's why they're stacking!
+var correctCurrentAnswer = creatingCalculation(difficultyNow)
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        // check current answer
+        // get answer    
+        var currentAnswer = document.getElementById("answer").value;
+        // check it
+        checkIfCorrectAns(correctCurrentAnswer);
+
+
+        // change numbers on screen 
+        correctCurrentAnswer = creatingCalculation(difficultyNow);
+    }
+
+})
 
 
 
-
-
-
-
-// document.addEventListener("keydown", (event) => {
-//     if (event.key === "Enter") {
-//         console.log("Enter has been pressed");
-//         var currentAnswer = creatingCalculation(difficultyNow);
-//         checkIfCorrectAns(currentAnswer);
-//         document.removeEventListener();
-
-
-//     }
-// })
