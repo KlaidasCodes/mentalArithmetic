@@ -12,7 +12,9 @@ var listOfSigns = []
 
 
 
-
+function updateCurrentPickedSignsList(listOfSigns) {
+    document.getElementById("signs").innerText = listOfSigns;
+}
 
 
 function moveToNextHTML() {
@@ -29,34 +31,45 @@ function addToListOfSigns(listOfSigns, item) {
 }
 
 
+function removeItemFromArray(itemName, listOfSigns) {
+    var indexOfItem = listOfSigns.indexOf(itemName);
+    listOfSigns.splice(indexOfItem, 1);
+    console.log("removed the item: " + itemName);
+}
+
 buttonAdd.addEventListener("click", () => {
     if (listOfSigns.includes("addition")) {
-        return
+        removeItemFromArray("addition", listOfSigns);
     } else {
         addToListOfSigns(listOfSigns, "addition");
     }
+    updateCurrentPickedSignsList(listOfSigns)
 })
 
 buttonSubtract.addEventListener("click", () => {
     if (listOfSigns.includes("subtraction")) {
-        return
+        removeItemFromArray("subtraction", listOfSigns);
+        console.log(listOfSigns);
     } else {
         addToListOfSigns(listOfSigns, "subtraction");
     }
+    updateCurrentPickedSignsList(listOfSigns)
 })
 
 buttonMultiply.addEventListener("click", () => {
     if (listOfSigns.includes("multiplication")) {
-        return
+        removeItemFromArray("multiplication", listOfSigns);
     } else {
         addToListOfSigns(listOfSigns, "multiplication");
     }
+    updateCurrentPickedSignsList(listOfSigns)
 })
 
 buttonDivide.addEventListener("click", () => {
     if (listOfSigns.includes("division")) {
-        return
+        removeItemFromArray("division", listOfSigns);
     } else {
         addToListOfSigns(listOfSigns, "division");
     }
+    updateCurrentPickedSignsList(listOfSigns)
 })
