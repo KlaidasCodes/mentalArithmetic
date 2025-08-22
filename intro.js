@@ -73,3 +73,5 @@ buttonDivide.addEventListener("click", () => {
     }
     updateCurrentPickedSignsList(listOfSigns)
 })
+
+// need to modularize this badly, my code is way too repetitive!
