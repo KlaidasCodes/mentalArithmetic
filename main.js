@@ -143,6 +143,9 @@ function checkingAndChangingNumbers(event) {
 //     console.log("This is working so far...");
 // }
 
+console.log(localStorage.getItem("actions"));
+
+
 var correctCurrentAnswer = creatingCalculation(difficultyNow)
 document.addEventListener("keydown", checkingAndChangingNumbers);
 
@@ -159,7 +162,6 @@ var theTimer = setInterval(() => {
     }
 
 }, 1000)
-
 
 
 

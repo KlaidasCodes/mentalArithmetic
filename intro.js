@@ -8,7 +8,7 @@ var buttonDivide = document.getElementById("divide")
 var buttonStart = document.getElementById("start")
 
 
-
+var listOfSigns = []
 
 
 
@@ -16,7 +16,47 @@ var buttonStart = document.getElementById("start")
 
 
 function moveToNextHTML() {
+    localStorage.setItem("actions", listOfSigns);
     window.location.href = "./index.html";
 }
 
 buttonStart.addEventListener("click", moveToNextHTML);
+
+
+function addToListOfSigns(listOfSigns, item) {
+    listOfSigns.push(item);
+    console.log(listOfSigns);
+}
+
+
+buttonAdd.addEventListener("click", () => {
+    if (listOfSigns.includes("addition")) {
+        return
+    } else {
+        addToListOfSigns(listOfSigns, "addition");
+    }
+})
+
+buttonSubtract.addEventListener("click", () => {
+    if (listOfSigns.includes("subtraction")) {
+        return
+    } else {
+        addToListOfSigns(listOfSigns, "subtraction");
+    }
+})
+
+buttonMultiply.addEventListener("click", () => {
+    if (listOfSigns.includes("multiplication")) {
+        return
+    } else {
+        addToListOfSigns(listOfSigns, "multiplication");
+    }
+})
+
+buttonDivide.addEventListener("click", () => {
+    if (listOfSigns.includes("division")) {
+        return
+    } else {
+        addToListOfSigns(listOfSigns, "division");
+    }
+})
