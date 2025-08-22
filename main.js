@@ -112,21 +112,23 @@ function checkIfCorrectAns(correctAns) {
 
 
 
-var correctCurrentAnswer = creatingCalculation(difficultyNow)
-document.addEventListener("keydown", (event) => {
+
+function checkingAndChangingNumbers(event) {
     if (event.key === "Enter") {
-        // check current answer
-        // get answer    
-        var currentAnswer = document.getElementById("answer").value;
-        // check it
-        checkIfCorrectAns(correctCurrentAnswer);
+    // check current answer
+    // get answer    
+    var currentAnswer = document.getElementById("answer").value;
+    // check it
+    checkIfCorrectAns(correctCurrentAnswer);
 
 
-        // change numbers on screen 
-        correctCurrentAnswer = creatingCalculation(difficultyNow);
-    }
+    // change numbers on screen 
+    correctCurrentAnswer = creatingCalculation(difficultyNow);
+}
+}
 
-})
+
+
 
 
 
@@ -140,9 +142,15 @@ document.addEventListener("keydown", (event) => {
 // function printRandomStuff() {
 //     console.log("This is working so far...");
 // }
+
+var correctCurrentAnswer = creatingCalculation(difficultyNow)
+document.addEventListener("keydown", checkingAndChangingNumbers);
+
+
 var counter = 10;
 var theTimer = setInterval(() => {
     if (counter == 0) {
+        document.removeEventListener("keydown", checkingAndChangingNumbers)
         clearInterval(theTimer);
     } else{
         console.log("is this working: " + counter);
@@ -151,6 +159,8 @@ var theTimer = setInterval(() => {
     }
 
 }, 1000)
+
+
 
 
 
