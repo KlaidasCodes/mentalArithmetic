@@ -170,3 +170,7 @@ var theTimer = setInterval(() => {
 
 
 
+
+
+// the localStorage can only handle strings. Need to use json stringify to handle arrays. Look
+// into that 
