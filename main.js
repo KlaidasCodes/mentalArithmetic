@@ -9,7 +9,7 @@ var difficultyNow = "Easy";
 
 var userPoints = 0;
 // user selects all the arithmetic signs they want used in the test
-const arrOfSigns = localStorage.getItem("actions")
+const arrOfSigns = JSON.parse(localStorage.getItem("actions"));
 // const arrOfSigns = ["addition", "subtraction"];
 // arrOfSigns = ["addition", "subtraction", "multiplication", "division"];
 
@@ -55,7 +55,7 @@ function division(num1, num2, difficultyLevel) {
 const wordToSignFunc = {
     "addition": adding,
     "subtraction": subtracting,
-    "multilpication": multiplying,
+    "multiplication": multiplying,
     "division": division,
 }
 
@@ -84,6 +84,7 @@ function creatingCalculation(difficultyLevel) {
     var number1 = pickRandomNumber(difficultyLevel);
     var number2 = pickRandomNumber(difficultyLevel);
     var arithSign = pickRandomSign(arrOfSigns);
+    console.log("THE ARITH SIGN: " + arithSign + " and its type: " + typeof(arithSign));
     var result = wordToSignFunc[arithSign](number1, number2, difficultyNow);
     var arithSignCurrent = wordToSign[arithSign];
     console.log("result: ", result);
@@ -146,14 +147,7 @@ function checkingAndChangingNumbers(event) {
 //     console.log("This is working so far...");
 // }
 
-// test
-var ourTest = JSON.parse(localStorage.getItem("test"));
 
-console.log("THIS IS IMPORTANT: " + ourTest + " and type: " + typeof(ourTest));
-
-
-
-console.log(localStorage.getItem("actions"));
 
 
 var correctCurrentAnswer = creatingCalculation(difficultyNow)

@@ -18,7 +18,7 @@ function updateCurrentPickedSignsList(listOfSigns) {
 
 
 function moveToNextHTML() {
-    localStorage.setItem("actions", listOfSigns);
+    localStorage.setItem("actions", JSON.stringify(listOfSigns));
     window.location.href = "./exercises.html";
 }
 
