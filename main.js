@@ -84,7 +84,6 @@ function creatingCalculation(difficultyLevel) {
     var number1 = pickRandomNumber(difficultyLevel);
     var number2 = pickRandomNumber(difficultyLevel);
     var arithSign = pickRandomSign(arrOfSigns);
-    console.log("PAY ATTENTION TO THIS: " + arithSign + " and its type is: " + typeof(arithSign))
     var result = wordToSignFunc[arithSign](number1, number2, difficultyNow);
     var arithSignCurrent = wordToSign[arithSign];
     console.log("result: ", result);
@@ -147,6 +146,13 @@ function checkingAndChangingNumbers(event) {
 //     console.log("This is working so far...");
 // }
 
+// test
+var ourTest = JSON.parse(localStorage.getItem("test"));
+
+console.log("THIS IS IMPORTANT: " + ourTest + " and type: " + typeof(ourTest));
+
+
+
 console.log(localStorage.getItem("actions"));
 
 
@@ -174,3 +180,5 @@ var theTimer = setInterval(() => {
 
 // the localStorage can only handle strings. Need to use json stringify to handle arrays. Look
 // into that 
+
+

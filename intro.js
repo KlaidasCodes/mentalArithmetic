@@ -93,3 +93,10 @@ button120s.addEventListener("click", () => {
 button180s.addEventListener("click", () => {
     addToStorage(180);
 })
+
+
+
+
+var testArray = ["apple", "banana", "orange"];
+
+localStorage.setItem("test", JSON.stringify(testArray));
