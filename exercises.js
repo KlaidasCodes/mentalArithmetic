@@ -154,7 +154,7 @@ var correctCurrentAnswer = creatingCalculation(difficultyNow)
 document.addEventListener("keydown", checkingAndChangingNumbers);
 
 
-var counter = 10;
+var counter = timeAmount;
 var theTimer = setInterval(() => {
     if (counter == 0) {
         document.removeEventListener("keydown", checkingAndChangingNumbers)
