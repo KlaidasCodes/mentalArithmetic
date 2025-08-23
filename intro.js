@@ -19,7 +19,7 @@ function updateCurrentPickedSignsList(listOfSigns) {
 
 function moveToNextHTML() {
     localStorage.setItem("actions", listOfSigns);
-    window.location.href = "./index.html";
+    window.location.href = "./exercises.html";
 }
 
 buttonStart.addEventListener("click", moveToNextHTML);
@@ -75,3 +75,21 @@ buttonDivide.addEventListener("click", () => {
 })
 
 // need to modularize this badly, my code is way too repetitive!
+
+function addToStorage(item) {
+    localStorage.setItem("duration", item);
+    document.getElementById("duration").innerText = localStorage.getItem("duration") + " seconds";
+}
+
+
+button60s.addEventListener("click", () => {
+    addToStorage(60);
+})
+
+button120s.addEventListener("click", () => {
+    addToStorage(120);
+})
+
+button180s.addEventListener("click", () => {
+    addToStorage(180);
+})

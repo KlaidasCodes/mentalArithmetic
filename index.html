@@ -3,21 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mental Arithmetic thing</title>
+    <title>Pick options</title>
 </head>
 <body>
-    <div> 
-        <!-- make this a flexbox to put them all in one line, or just do this all in one line? -->
-        <p id="num1">Press ENTER to start!</p>
-        <p id="arith_sign"></p>
-        <p id="num2"></p>
+    <div>
+        <p>How long would you like to train for?</p>
+        <button id="60s">1min</button>
+        <button id="120s">2min</button>
+        <button id="180s">3min</button>
     </div>
     <div>
-        <input type="text" id="answer">
+        <p>What exercises would you like to be added?</p>
+        <button id="add">+</button>
+        <button id="subtract">-</button>
+        <button id="multiply">x</button>
+        <button id="divide">/</button>
     </div>
-    <div id="user_points">Current points: 0</div>
-    <div id="timer">Time left: 60 seconds</div>
+    <p></p>
+    <div>
+        <button id="start">Start!</button>
+    </div>
 
-<script src="./main.js"></script>
+    <p></p>
+    <p></p>
+    <div>
+        <p>User has picked these signs to be used:</p>
+        <p id="signs"> </p>
+    </div>
+    <div>
+        <p>User has picked this duration:</p>
+        <p id="duration"> </p>
+    </div>
+
+<script src="./intro.js"></script>    
 </body>
 </html>

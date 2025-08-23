@@ -1,17 +1,20 @@
 console.log("connected")
 
 // user presses a button to pick a timer
-timeAmount = 60;
+const timeAmount = localStorage.getItem("duration");
+// timeAmount = 60;
 
 // user presses a button to pick a difficulty
 var difficultyNow = "Easy";
 
 var userPoints = 0;
 // user selects all the arithmetic signs they want used in the test
-const arrOfSigns = ["addition", "subtraction"];
+const arrOfSigns = localStorage.getItem("actions")
+// const arrOfSigns = ["addition", "subtraction"];
 // arrOfSigns = ["addition", "subtraction", "multiplication", "division"];
 
-
+console.log("Signs that will be used: " + typeof(arrOfSigns));
+console.log("Duration: " + timeAmount);
 
 const difficultyToLength = {
     "vEasy": 10,
@@ -81,7 +84,8 @@ function creatingCalculation(difficultyLevel) {
     var number1 = pickRandomNumber(difficultyLevel);
     var number2 = pickRandomNumber(difficultyLevel);
     var arithSign = pickRandomSign(arrOfSigns);
-    var result = wordToSignFunc[arithSign](number1, number2);
+    console.log("PAY ATTENTION TO THIS: " + arithSign + " and its type is: " + typeof(arithSign))
+    var result = wordToSignFunc[arithSign](number1, number2, difficultyNow);
     var arithSignCurrent = wordToSign[arithSign];
     console.log("result: ", result);
     updateValues(number1, number2, arithSignCurrent);
