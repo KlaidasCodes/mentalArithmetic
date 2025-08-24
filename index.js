@@ -1,11 +1,19 @@
-var button60s = document.getElementById("60s")
-var button120s = document.getElementById("120s")
-var button180s = document.getElementById("180s")
-var buttonAdd = document.getElementById("add")
-var buttonSubtract = document.getElementById("subtract")
-var buttonMultiply = document.getElementById("multiply")
-var buttonDivide = document.getElementById("divide")
-var buttonStart = document.getElementById("start")
+var button60s = document.getElementById("60s");
+var button120s = document.getElementById("120s");
+var button180s = document.getElementById("180s");
+var buttonAdd = document.getElementById("add");
+var buttonSubtract = document.getElementById("subtract");
+var buttonMultiply = document.getElementById("multiply");
+var buttonDivide = document.getElementById("divide");
+var buttonStart = document.getElementById("start");
+var buttonDigit1Len1 = document.getElementById("digit1len1");
+var buttonDigit1Len2 = document.getElementById("digit1len2");
+var buttonDigit1Len3 = document.getElementById("digit1len3");
+var buttonDigit1Len4 = document.getElementById("digit1len4");
+var buttonDigit2Len1 = document.getElementById("digit2len1");
+var buttonDigit2Len2 = document.getElementById("digit2len2");
+var buttonDigit2Len3 = document.getElementById("digit2len3");
+var buttonDigit2Len4 = document.getElementById("digit2len4");
 
 
 var listOfSigns = []
@@ -100,3 +108,42 @@ button180s.addEventListener("click", () => {
 var testArray = ["apple", "banana", "orange"];
 
 localStorage.setItem("test", JSON.stringify(testArray));
+
+
+function addDigitLenToLocalStorage(digitNo, lenOfDigit) {
+    localStorage.setItem("digit" + digitNo, lenOfDigit);
+    console.log("digit" + digitNo + " has been added with len of " + lenOfDigit);
+}
+
+
+buttonDigit1Len1.addEventListener("click", () => {
+    addDigitLenToLocalStorage("1", 1);
+})
+
+buttonDigit1Len2.addEventListener("click", () => {
+    addDigitLenToLocalStorage("1", 2);
+})
+
+buttonDigit1Len3.addEventListener("click", () => {
+    addDigitLenToLocalStorage("1", 3);
+})
+
+buttonDigit1Len4.addEventListener("click", () => {
+    addDigitLenToLocalStorage("1", 4);
+})
+
+buttonDigit2Len1.addEventListener("click", () => {
+    addDigitLenToLocalStorage("2", 1);
+})
+
+buttonDigit2Len2.addEventListener("click", () => {
+    addDigitLenToLocalStorage("2", 2);
+})
+
+buttonDigit2Len3.addEventListener("click", () => {
+    addDigitLenToLocalStorage("2", 3);
+})
+
+buttonDigit2Len4.addEventListener("click", () => {
+    addDigitLenToLocalStorage("2", 4);
+})
