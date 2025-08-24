@@ -25,12 +25,29 @@ function updateCurrentPickedSignsList(listOfSigns) {
 }
 
 
+function startButtonActions() {
+    // run checks to see if everything has been picked
+    // so the array has to be non-empty
+    // with the others we can just check if localStorage has them
+    if ((listOfSigns.length !== 0) && (localStorage.getItem("duration")) && (localStorage.getItem("digit1")) && (localStorage.getItem("digit2"))) {
+        // if successful, move to the other page and start   
+        moveToNextHTML();
+    } else {
+        document.getElementById("errorArea").innerText = "Make sure to specify all the required parameters!";
+        console.log("Make sure to specify all the required parameters!");
+    }
+
+
+
+}
+
 function moveToNextHTML() {
+    console.log("GOT TO THE HTML FUNCTION");
     localStorage.setItem("actions", JSON.stringify(listOfSigns));
     window.location.href = "./exercises.html";
 }
 
-buttonStart.addEventListener("click", moveToNextHTML);
+buttonStart.addEventListener("click", startButtonActions);
 
 
 function addToListOfSigns(listOfSigns, item) {
