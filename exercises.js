@@ -92,6 +92,21 @@ function creatingCalculation(difficultyLevel) {
     return result
 }
 
+// slightly modify the function above so that exercises are a bit more interesting
+// thinking - the difficulty picked would be the upper limit for each number
+// if we pick "normal", which is 3 digit numbers, then that means that the exercises can be
+// 1-3 digit number <action> 1-3 digit number. This way it's not only 389*298 but also easier ones like
+// 4*743 and stuff. Also, could later expand this difficulty thing, so that it's always 1 digit times
+// 3 digits, or 2 digits times 3 digits. Add some of that modification.
+
+// Perhaps just buttons that would allow you to pick the 1) amount of digits for each number
+// or 2) the upper limit for each number. Instead of the difficulty we'd have full customization
+
+
+
+
+
+
 
 function checkIfCorrectAns(correctAns) {
     var givenAnswer = document.getElementById("answer").value
