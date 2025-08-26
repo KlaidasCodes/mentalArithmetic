@@ -7,6 +7,12 @@ const timeAmount = localStorage.getItem("duration");
 // user presses a button to pick a difficulty
 var difficultyNow = "Easy";
 
+var difficultyDigit1 = localStorage.getItem("digit1");
+var difficultyDigit2 = localStorage.getItem("digit2");
+console.log("This is the digit1: " + difficultyDigit1);
+console.log("This is the digit2: " + difficultyDigit2);
+
+
 var userPoints = 0;
 // user selects all the arithmetic signs they want used in the test
 const arrOfSigns = JSON.parse(localStorage.getItem("actions"));
@@ -60,8 +66,8 @@ const wordToSignFunc = {
 }
 
 function pickRandomNumber(difficultyLevel) {
-    var multiplier = difficultyToLength[difficultyLevel] 
-    var randomNumber = Math.ceil((Math.random()) * multiplier);
+    // var multiplier = difficultyToLength[difficultyLevel] 
+    var randomNumber = Math.ceil((Math.random()) * difficultyLevel);
     console.log(randomNumber);
     return randomNumber
 }
@@ -81,8 +87,8 @@ function updateValues(num1, num2, sign) {
 
 
 function creatingCalculation(difficultyLevel) {
-    var number1 = pickRandomNumber(difficultyLevel);
-    var number2 = pickRandomNumber(difficultyLevel);
+    var number1 = pickRandomNumber(difficultyDigit1);
+    var number2 = pickRandomNumber(difficultyDigit2);
     var arithSign = pickRandomSign(arrOfSigns);
     console.log("THE ARITH SIGN: " + arithSign + " and its type: " + typeof(arithSign));
     var result = wordToSignFunc[arithSign](number1, number2, difficultyNow);

@@ -131,79 +131,68 @@ function addDigitLenToLocalStorage(digitNo, lenOfDigit) {
     localStorage.setItem("digit" + digitNo, lenOfDigit);
     console.log("digit " + digitNo + " has been added with len of " + lenOfDigit);
     console.log(localStorage.getItem("digit" + digitNo));
+
+    console.log(localStorage)
 }
 
 
-// buttonDigit1Len1.addEventListener("click", () => {
-//     addDigitLenToLocalStorage("1", 1);
-// })
+buttonDigit1Len1.addEventListener("click", () => {
+    addDigitLenToLocalStorage("1", 10);
+})
 
-// buttonDigit1Len2.addEventListener("click", () => {
-//     addDigitLenToLocalStorage("1", 2);
-// })
+buttonDigit1Len2.addEventListener("click", () => {
+    addDigitLenToLocalStorage("1", 100);
+})
 
-// buttonDigit1Len3.addEventListener("click", () => {
-//     addDigitLenToLocalStorage("1", 3);
-// })
+buttonDigit1Len3.addEventListener("click", () => {
+    addDigitLenToLocalStorage("1", 1000);
+})
 
-// buttonDigit1Len4.addEventListener("click", () => {
-//     addDigitLenToLocalStorage("1", 4);
-// })
+buttonDigit1Len4.addEventListener("click", () => {
+    addDigitLenToLocalStorage("1", 10000);
+})
 
-// buttonDigit2Len1.addEventListener("click", () => {
-//     addDigitLenToLocalStorage("2", 1);
-// })
+buttonDigit2Len1.addEventListener("click", () => {
+    addDigitLenToLocalStorage("2", 10);
+})
 
-// buttonDigit2Len2.addEventListener("click", () => {
-//     addDigitLenToLocalStorage("2", 2);
-// })
+buttonDigit2Len2.addEventListener("click", () => {
+    addDigitLenToLocalStorage("2", 100);
+})
 
-// buttonDigit2Len3.addEventListener("click", () => {
-//     addDigitLenToLocalStorage("2", 3);
-// })
+buttonDigit2Len3.addEventListener("click", () => {
+    addDigitLenToLocalStorage("2", 1000);
+})
 
-// buttonDigit2Len4.addEventListener("click", () => {
-//     addDigitLenToLocalStorage("2", 4);
-// })
-
-
-
-arrayOfDigitLenButtons = [buttonDigit1Len1, buttonDigit1Len2, buttonDigit1Len3, buttonDigit1Len4, buttonDigit2Len1, 
-    buttonDigit2Len2, buttonDigit2Len3, buttonDigit2Len4]
-
-var counter = 1
-var biggerCounter = 1
-for (var i = 0; i < arrayOfDigitLenButtons.length; i++) {
-    console.log("Iteration number: " + (i + 1));
-    var currentButton = arrayOfDigitLenButtons[i];
-    console.log("The current button: " + currentButton);
-    console.log("The biggerCounter: " + biggerCounter + " and the smaller counter: " + counter);
-    currentButton.addEventListener("click", () => {
-        addDigitLenToLocalStorage(biggerCounter, counter);
-    })
-    counter ++;
-    if (counter == 5) {
-        biggerCounter ++;
-        counter = 1;
-    }
-}
+buttonDigit2Len4.addEventListener("click", () => {
+    addDigitLenToLocalStorage("2", 10000);
+})
 
 
-// pseudo code for a loop going through buttons and applying even listeners - really needed
-//
-//
-// counter = 1
-// bigggerCounter = 1
-// for button in list {
-//   button.addEventListener("click", () => {
-//          addDigitLenToLocalStorage(biggerCounter, counter)
-//      })
-//  counter ++
-//  if (counter == 4) {
-//      biggerCounter ++
-//      counter = 1
-//  }
-// 
-// 
-// 
-//}
+
+// arrayOfDigitLenButtons = [buttonDigit1Len1, buttonDigit1Len2, buttonDigit1Len3, buttonDigit1Len4, buttonDigit2Len1, 
+//     buttonDigit2Len2, buttonDigit2Len3, buttonDigit2Len4]
+
+// for (var i = 0; i < arrayOfDigitLenButtons.length; i++) {
+//     console.log(arrayOfDigitLenButtons[i])
+// }
+
+
+
+// var counter = 1
+// var biggerCounter = 1
+// for (var i = 0; i < arrayOfDigitLenButtons.length; i++) {
+//     console.log("Iteration number: " + (i + 1));
+//     let currentButton = arrayOfDigitLenButtons[i];
+//     console.log("The current button: " + currentButton);
+//     console.log("The biggerCounter: " + biggerCounter + " and the smaller counter: " + counter);
+//     arrayOfDigitLenButtons[i].addEventListener("click", () => {
+//         addDigitLenToLocalStorage(biggerCounter, counter);
+//     })
+//     counter ++;
+//     if (counter == 5) {
+//         biggerCounter ++;
+//         counter = 1;
+//     }
+// }
+
