@@ -137,35 +137,35 @@ function addDigitLenToLocalStorage(digitNo, lenOfDigit) {
 
 
 buttonDigit1Len1.addEventListener("click", () => {
-    addDigitLenToLocalStorage("1", 10);
+    addDigitLenToLocalStorage("1", "10");
 })
 
 buttonDigit1Len2.addEventListener("click", () => {
-    addDigitLenToLocalStorage("1", 100);
+    addDigitLenToLocalStorage("1", "100");
 })
 
 buttonDigit1Len3.addEventListener("click", () => {
-    addDigitLenToLocalStorage("1", 1000);
+    addDigitLenToLocalStorage("1", "1000");
 })
 
 buttonDigit1Len4.addEventListener("click", () => {
-    addDigitLenToLocalStorage("1", 10000);
+    addDigitLenToLocalStorage("1", "10000");
 })
 
 buttonDigit2Len1.addEventListener("click", () => {
-    addDigitLenToLocalStorage("2", 10);
+    addDigitLenToLocalStorage("2", "10");
 })
 
 buttonDigit2Len2.addEventListener("click", () => {
-    addDigitLenToLocalStorage("2", 100);
+    addDigitLenToLocalStorage("2", "100");
 })
 
 buttonDigit2Len3.addEventListener("click", () => {
-    addDigitLenToLocalStorage("2", 1000);
+    addDigitLenToLocalStorage("2", "1000");
 })
 
 buttonDigit2Len4.addEventListener("click", () => {
-    addDigitLenToLocalStorage("2", 10000);
+    addDigitLenToLocalStorage("2", "10000");
 })
 
 

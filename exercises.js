@@ -23,10 +23,10 @@ console.log("Signs that will be used: " + typeof(arrOfSigns));
 console.log("Duration: " + timeAmount);
 
 const difficultyToLength = {
-    "vEasy": 10,
-    "Easy": 100,
-    "Medium": 1000,
-    "Hard": 10000,
+    "10": 1,
+    "100": 2,
+    "1000": 3,
+    "10000": 4
 }
 
 const wordToSign = {
@@ -195,5 +195,31 @@ var theTimer = setInterval(() => {
 
 // the localStorage can only handle strings. Need to use json stringify to handle arrays. Look
 // into that 
+
+
+
+
+// at the end of a round, register the result into a json file (later do a graph or smth to show growth over time)
+// also register average response time! Will be interesting to see (so just overall time divided by amount answered)
+// also, need to decide whether an incorrect answer makes the question go away or the user must answer before moving on (or even penalized?), so the user cant just cheat
+// for instance, if the q is 99*44 the user could just enter 1, click enter and move onto an easier q like 10*99, which would make the training pointless
+
+// so we need to define separate difficulty levels. Each additional digit could carry a difficulty point. So 1 digit times 3 digits would be 4 points of difficulty, just like 2 x 2. This way we can slightly 
+// standardize the system. Since the max is 4digits each, max difficulty is 8 (oh boy).
+// min difficulty is 2, but that's just 1 digit times 1 digit which is child's play, hence should be disregarded.
+// 
+// most realistic: min difficulty - 3 points, max difficulty 8 points.
+// userPoints is the var 
+
+
+
+
+var difficultyLeagePoints = difficultyToLength[difficultyDigit1] + difficultyToLength[difficultyDigit2];
+console.log("This is the score of difficulty: " + difficultyLeagePoints);
+
+// now that we have difficulty leagues, each of the 3 durations can have their own difficulties and scores.
+// should do something about the signs too!
+
+// also, need to do something about division - for now it's just nonsense, need to either do fractions or division that actually makes sense instead of 20 digits after the comma
 
 
